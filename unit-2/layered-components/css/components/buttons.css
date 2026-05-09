@@ -1,4 +1,61 @@
-/* Button components: .btn, .primary, .secondary, disabled state
-   Use native nesting for pseudo-classes and modifiers. */
+.btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: var(--space-sm);
 
-/* TODO: Style the button components */
+   padding: 0.65rem 1rem;
+   border: 1px solid transparent;
+   border-radius: var(--radius);
+
+   font: inherit;
+   font-weight: var(--font-weight-bold);
+   line-height: 1;
+
+   cursor: pointer;
+   text-decoration: none;
+
+   transition:
+      background-color var(--transition),
+      color var(--transition),
+      border-color var(--transition),
+      transform var(--transition),
+      box-shadow var(--transition);
+
+   &:not(:disabled):hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+   }
+
+   &:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+   }
+
+   &:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+   }
+
+   &.primary {
+      background-color: var(--color-primary);
+      color: var(--color-surface);
+      border-color: var(--color-primary);
+
+      &:not(:disabled):hover {
+         background-color: var(--color-accent);
+         border-color: var(--color-accent);
+      }
+   }
+
+   &.secondary {
+      background-color: var(--color-surface);
+      color: var(--color-primary);
+      border-color: var(--color-border);
+
+      &:not(:disabled):hover {
+         border-color: var(--color-primary);
+         background-color: var(--color-background);
+      }
+   }
+}

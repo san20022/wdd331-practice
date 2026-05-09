@@ -1,5 +1,18 @@
-/* Utility classes: single-purpose helpers.
-   These live in the last layer so they override components
-   by layer order without needing !important. */
+/* Utility classes */
 
-/* TODO: Add any utility classes you find useful */
+.u-text-center {
+   text-align: center;
+}
+
+.u-flex {
+   display: flex;
+   gap: var(--space-sm);
+}
+
+.u-hidden {
+   display: none;
+}
+
+.u-mt-lg {
+   margin-top: var(--space-lg);
+}

@@ -1,0 +1,14 @@
+:root {
+    --color-bg: #f4f6f8;
+    --color-text: #1e293b;
+    --color-primary: #006eb6;
+    --color-primary-hover: #004f7f;
+    --color-surface: #ffffff;
+    --color-muted: #64748b;
+    --color-border: #e2e8f0;
+    --color-accent: #22c55e;
+
+    --color-tag-blue: #2563eb;
+    --color-tag-purple: #7c3aed;
+    --color-tag-green: #059669;
+}

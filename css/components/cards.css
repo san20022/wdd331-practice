@@ -1,0 +1,90 @@
+.card-group {
+    margin-bottom: var(--space-xl);
+}
+
+.card-group h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+.card-group h2::before {
+    content: "";
+    width: 6px;
+    height: 24px;
+    background: var(--color-primary);
+    border-radius: var(--radius-sm);
+}
+
+.card {
+    background: var(--color-surface);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--radius-sm);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    align-self: flex-start;
+}
+
+.card:nth-child(3n+1) .card-tag {
+    background: var(--color-tag-blue);
+}
+
+.card:nth-child(3n+2) .card-tag {
+    background: var(--color-tag-purple);
+}
+
+.card:nth-child(3n+3) .card-tag {
+    background: var(--color-tag-green);
+}
+
+.card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 0.92rem;
+    color: var(--color-muted);
+    flex-grow: 1;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-sm);
+}
+
+.card-meta span {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+
+.card-meta a {
+    font-size: 0.85rem;
+    font-weight: 600;
+}

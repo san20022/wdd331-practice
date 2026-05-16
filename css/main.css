@@ -1,44 +1,16 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@layer tokens, base, layout, components, utilities;
 
-:root {
-    --color-bg: #f4f6f8;
-    --color-text: #1e293b;
-    --color-primary: #006eb6;
-    --color-primary-hover: #004f7f;
+@import url("tokens/colors.css") layer(tokens);
+@import url("tokens/variables.css") layer(tokens);
 
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 2rem;
+@import url("base/reset.css") layer(base);
+@import url("base/elements.css") layer(base);
 
-    --font-body: system-ui, -apple-system, sans-serif;
-}
+@import url("layout/page.css") layer(layout);
 
-body {
-    font-family: var(--font-body);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    line-height: 1.6;
-    padding: var(--space-lg);
-}
+@import url("components/navigation.css") layer(components);
+@import url("components/header.css") layer(components);
+@import url("components/cards.css") layer(components);
+@import url("components/footer.css") layer(components);
 
-h1 {
-    margin-bottom: var(--space-md);
-}
-
-p {
-    max-width: 600px;
-}
-
-a {
-    color: var(--color-primary);
-}
-
-a:hover {
-    color: var(--color-primary-hover);
-}
+@import url("utilities/utilities.css") layer(utilities);

@@ -5,38 +5,83 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Sanchez Rojas – Practice Site</title>
-    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="dist/styles.css">
 </head>
 
 <body>
-    <header>
-        <h1>Luis Sanchez Rojas</h1>
-    </header>
 
-    <nav>
-        <h2>Assignments</h2>
-        <ul>
-            <li>
-                <a href="unit-1/custom-properties/index.html">
-                    Custom Properties and Nesting
-                </a>
-            </li>
-            <li>
-                <a href="unit-2/layered-components/index.html">
-                    Layered Components and Design Tokens
-                </a>
-            </li>
-        </ul>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
     </nav>
 
-    <main>
+    <header class="board-header">
+        <h1>Luis Sanchez Rojas</h1>
+
         <p>
             Welcome to my Practice Site for WDD 331R: Advanced CSS.
-            This website will be used throughout the semester to practice
-            modern CSS techniques, improve my web development skills,
-            and build a solid foundation for future projects.
+            This website showcases my assignments, projects, and practice
+            work throughout the semester while learning modern CSS architecture,
+            design systems, responsive layouts, and advanced styling techniques.
         </p>
+    </header>
+
+    <main>
+
+        <section class="card-group">
+            <h2>Assignments</h2>
+
+            <div class="cards">
+
+                <article class="card">
+                    <span class="card-tag">Unit 1</span>
+
+                    <h3>Custom Properties and Nesting</h3>
+
+                    <p>
+                        Practice using CSS custom properties, nesting,
+                        reusable variables, and responsive styling techniques.
+                    </p>
+
+                    <div class="card-meta">
+                        <span>Completed</span>
+
+                        <a href="unit-1/custom-properties/index.html">
+                            View Project
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <span class="card-tag">Unit 2</span>
+
+                    <h3>Layered Components and Design Tokens</h3>
+
+                    <p>
+                        Organized CSS using layers, architecture patterns,
+                        reusable tokens, and scalable component structures.
+                    </p>
+
+                    <div class="card-meta">
+                        <span>Completed</span>
+
+                        <a href="unit-2/layered-components/index.html">
+                            View Project
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
     </main>
+
+    <footer class="board-footer">
+        <p>
+            WDD 331R Advanced CSS • Practice Site • 2026
+        </p>
+    </footer>
+
 </body>
 
 </html>

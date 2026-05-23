@@ -1,0 +1,25 @@
+{
+  "name": "wdd331-practice",
+  "version": "1.0.0",
+  "description": "- [Home](index.html) - [Custom Properties and Nesting](unit-1/custom-properties/index.html) - [Layered Components and Design Tokens](unit-2/layered-components/index.html)",
+  "main": "index.js",
+  "scripts": {
+    "build": "lightningcss --bundle css/main.css -o dist/styles.css --minify",
+    "watch": "lightningcss --bundle css/main.css -o dist/styles.css --minify --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/san20022/wdd331-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/san20022/wdd331-practice/issues"
+  },
+  "homepage": "https://github.com/san20022/wdd331-practice#readme",
+  "devDependencies": {
+    "lightningcss-cli": "^1.32.0"
+  }
+}

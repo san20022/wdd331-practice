@@ -1,17 +1,34 @@
 .board-header {
     text-align: center;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--spacing-xl);
+
+    padding: var(--spacing-xl);
+
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        background-color var(--transition-base),
+        border-color var(--transition-base);
 }
 
 .board-header h1 {
     font-size: clamp(2.2rem, 5vw, 3.6rem);
     font-weight: var(--font-weight-bold);
     letter-spacing: -0.02em;
+
+    color: var(--color-text);
 }
 
 .board-header p {
     margin-inline: auto;
-    margin-top: var(--space-sm);
-    color: var(--color-muted);
+    margin-top: var(--spacing-sm);
+
+    color: var(--color-text-muted);
+
     font-size: 1.05rem;
 }

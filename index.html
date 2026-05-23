@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Luis Sanchez Rojas – Practice Site</title>
+
+    <script src="js/theme-preference.js"></script>
 
     <link rel="stylesheet" href="dist/styles.css">
 </head>
@@ -12,28 +15,68 @@
 <body>
 
     <nav class="site-nav">
+
         <a href="index.html">Home</a>
+
+        <details class="theme-menu">
+            <summary class="theme-control">
+                <span class="visually-hidden">Color scheme</span>
+            </summary>
+
+            <div class="theme-extra" role="group" aria-label="Choose color scheme">
+
+                <label class="theme-control theme-pick" data-theme-pick="light">
+                    <input name="theme-preference" type="radio" value="light">
+
+                    <span aria-hidden="true">&#9788;&#65039;</span>
+
+                    <span class="visually-hidden">Light</span>
+                </label>
+
+                <label class="theme-control theme-pick" data-theme-pick="system">
+                    <input name="theme-preference" type="radio" value="system" checked>
+
+                    <span aria-hidden="true">&#9881;&#65039;</span>
+
+                    <span class="visually-hidden">System default</span>
+                </label>
+
+                <label class="theme-control theme-pick" data-theme-pick="dark">
+                    <input name="theme-preference" type="radio" value="dark">
+
+                    <span aria-hidden="true">&#127766;</span>
+
+                    <span class="visually-hidden">Dark</span>
+                </label>
+
+            </div>
+        </details>
+
     </nav>
 
     <header class="board-header">
+
         <h1>Luis Sanchez Rojas</h1>
 
         <p>
             Welcome to my Practice Site for WDD 331R: Advanced CSS.
             This website showcases my assignments, projects, and practice
             work throughout the semester while learning modern CSS architecture,
-            design systems, responsive layouts, and advanced styling techniques..
+            design systems, responsive layouts, and advanced styling techniques.
         </p>
+
     </header>
 
     <main>
 
         <section class="card-group">
+
             <h2>Assignments</h2>
 
             <div class="cards">
 
                 <article class="card">
+
                     <span class="card-tag">Unit 1</span>
 
                     <h3>Custom Properties and Nesting</h3>
@@ -44,15 +87,19 @@
                     </p>
 
                     <div class="card-meta">
+
                         <span>Completed</span>
 
                         <a href="unit-1/custom-properties/index.html">
                             View Project
                         </a>
+
                     </div>
+
                 </article>
 
                 <article class="card">
+
                     <span class="card-tag">Unit 2</span>
 
                     <h3>Layered Components and Design Tokens</h3>
@@ -63,23 +110,29 @@
                     </p>
 
                     <div class="card-meta">
+
                         <span>Completed</span>
 
                         <a href="unit-2/layered-components/index.html">
                             View Project
                         </a>
+
                     </div>
+
                 </article>
 
             </div>
+
         </section>
 
     </main>
 
     <footer class="board-footer">
+
         <p>
             WDD 331R Advanced CSS • Practice Site • 2026
         </p>
+
     </footer>
 
 </body>

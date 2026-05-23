@@ -4,8 +4,8 @@
   "description": "- [Home](index.html) - [Custom Properties and Nesting](unit-1/custom-properties/index.html) - [Layered Components and Design Tokens](unit-2/layered-components/index.html)",
   "main": "index.js",
   "scripts": {
-    "build": "lightningcss css/main.css -o dist/styles.css --minify",
-    "watch": "lightningcss css/main.css -o dist/styles.css --minify --watch"
+    "build": "lightningcss --bundle css/main.css -o dist/styles.css --minify",
+    "watch": "lightningcss --bundle css/main.css -o dist/styles.css --minify --watch"
   },
   "repository": {
     "type": "git",

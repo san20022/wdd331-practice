@@ -1,0 +1,193 @@
+.hero {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    margin-bottom: var(--spacing-xl);
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: var(--shadow-md);
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(to bottom,
+            rgb(0 0 0 / 0.2),
+            rgb(0 0 0 / 0.55));
+
+    z-index: 1;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+    padding: var(--spacing-xl);
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+
+    text-shadow:
+        0 4px 12px rgb(0 0 0 / 0.7);
+}
+
+.hero-content p {
+    margin-inline: auto;
+
+    font-size: 1.1rem;
+
+    text-shadow:
+        0 2px 8px rgb(0 0 0 / 0.7);
+}
+
+.card-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-md);
+
+    filter: grayscale(100%);
+
+    transition:
+        transform var(--transition-base),
+        filter var(--transition-base);
+}
+
+.card:hover .card-image {
+    filter: grayscale(0%);
+
+    transform: scale(1.03);
+}
+
+.card-body {
+    padding-top: var(--spacing-md);
+}
+
+.glass-section {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    margin-bottom: var(--spacing-xl);
+
+    min-height: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass-background,
+.glass-bg-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.glass-panel {
+    position: relative;
+    z-index: 2;
+
+    max-width: 600px;
+
+    padding: var(--spacing-xl);
+
+    border-radius: var(--radius-lg);
+
+    backdrop-filter:
+        blur(18px) saturate(180%);
+
+    background:
+        light-dark(rgb(255 255 255 / 0.25),
+            rgb(20 20 20 / 0.35));
+
+    border:
+        1px solid rgb(255 255 255 / 0.2);
+
+    box-shadow: var(--shadow-md);
+
+    color: var(--color-text);
+}
+
+.icon-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.icon-row {
+    display: flex;
+    gap: var(--spacing-lg);
+
+    flex-wrap: wrap;
+
+    margin-top: var(--spacing-lg);
+}
+
+.icon-item {
+    width: 72px;
+    height: 72px;
+
+    color: var(--color-text);
+
+    filter:
+        drop-shadow(0 4px 6px rgb(0 0 0 / 0.3)) drop-shadow(0 0 10px rgb(0 0 0 / 0.15));
+
+    transition:
+        transform var(--transition-base),
+        filter var(--transition-base);
+}
+
+.icon-item:hover {
+    transform: translateY(-6px) scale(1.05);
+
+    filter:
+        drop-shadow(0 10px 12px rgb(0 0 0 / 0.4)) drop-shadow(0 0 18px rgb(0 0 0 / 0.2));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glass-panel {
+        backdrop-filter: none;
+
+        background:
+            light-dark(rgb(255 255 255 / 0.92),
+                rgb(30 30 30 / 0.92));
+    }
+}

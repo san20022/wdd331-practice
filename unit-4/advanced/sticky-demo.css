@@ -1,0 +1,95 @@
+.sticky-demo-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.sticky-layout {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: minmax(220px, 280px) 1fr;
+    gap: var(--spacing-lg);
+
+    align-items: start;
+}
+
+/*
+    Sticky bug fix:
+    I tested overflow: hidden on this layout wrapper and it broke
+    position: sticky because the ancestor became the wrong scroll context.
+    Instead of clipping the wrapper with overflow, the decorative effect
+    is handled with borders, radius, and shadows so the sticky sidebar can
+    still stick relative to the page scroll.
+*/
+
+.sticky-sidebar {
+    position: sticky;
+    top: var(--spacing-lg);
+}
+
+.toc {
+    display: grid;
+    gap: var(--spacing-sm);
+
+    padding: var(--spacing-md);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.toc h2 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.toc a {
+    display: block;
+
+    padding: var(--spacing-sm);
+
+    border-radius: var(--radius-sm);
+
+    color: var(--color-link);
+}
+
+.toc a:hover {
+    background: var(--color-bg);
+}
+
+.sticky-article {
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+.sticky-article section {
+    padding: var(--spacing-xl);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.sticky-article h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.sticky-article p+p {
+    margin-top: var(--spacing-md);
+}
+
+@media (max-width: 800px) {
+    .sticky-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sticky-sidebar {
+        position: static;
+    }
+}

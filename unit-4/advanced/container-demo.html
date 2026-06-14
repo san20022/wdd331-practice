@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Query Demo</title>
+
+    <script src="../../js/theme-preference.js"></script>
+
+    <link rel="stylesheet" href="../../dist/styles.css">
+    <link rel="stylesheet" href="container-demo.css">
+</head>
+
+<body class="container-demo-page">
+
+    <nav class="site-nav">
+        <a href="../../index.html">&larr; Home</a>
+
+        <details class="theme-menu">
+            <summary class="theme-control">
+                <span class="visually-hidden">Color scheme</span>
+            </summary>
+
+            <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                <label class="theme-control theme-pick" data-theme-pick="light">
+                    <input name="theme-preference" type="radio" value="light">
+                    <span aria-hidden="true">&#9788;&#65039;</span>
+                    <span class="visually-hidden">Light</span>
+                </label>
+
+                <label class="theme-control theme-pick" data-theme-pick="system">
+                    <input name="theme-preference" type="radio" value="system" checked>
+                    <span aria-hidden="true">&#9881;&#65039;</span>
+                    <span class="visually-hidden">System default</span>
+                </label>
+
+                <label class="theme-control theme-pick" data-theme-pick="dark">
+                    <input name="theme-preference" type="radio" value="dark">
+                    <span aria-hidden="true">&#127766;</span>
+                    <span class="visually-hidden">Dark</span>
+                </label>
+            </div>
+        </details>
+    </nav>
+
+    <header class="board-header">
+        <h1>Container Query Demo</h1>
+        <p>
+            The same component changes its layout based on the size of its container,
+            not the size of the browser window.
+        </p>
+    </header>
+
+    <main class="container-layout">
+
+        <aside class="demo-sidebar component-container">
+            <article class="feature-card">
+                <div class="feature-icon">CQ</div>
+
+                <div class="feature-content">
+                    <h2>Sidebar Placement</h2>
+                    <p>
+                        In this narrow container, the card stacks vertically
+                        because the component has less available space.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+            </article>
+        </aside>
+
+        <section class="demo-main component-container">
+            <article class="feature-card">
+                <div class="feature-icon">CQ</div>
+
+                <div class="feature-content">
+                    <h2>Main Content Placement</h2>
+                    <p>
+                        In this wider container, the same component switches to
+                        a horizontal layout without using a media query.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="board-footer">
+        <p>&copy; 2026 Container Query Demo</p>
+    </footer>
+
+</body>
+
+</html>

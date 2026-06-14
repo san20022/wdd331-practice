@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Module Demo</title>
+
+    <script src="../../js/theme-preference.js"></script>
+
+    <link rel="stylesheet" href="../../dist/styles.css">
+    <link rel="stylesheet" href="sticky-demo.css">
+</head>
+
+<body class="sticky-demo-page">
+
+    <nav class="site-nav">
+        <a href="../../index.html">&larr; Home</a>
+
+        <details class="theme-menu">
+            <summary class="theme-control">
+                <span class="visually-hidden">Color scheme</span>
+            </summary>
+
+            <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                <label class="theme-control theme-pick" data-theme-pick="light">
+                    <input name="theme-preference" type="radio" value="light">
+                    <span aria-hidden="true">&#9788;&#65039;</span>
+                    <span class="visually-hidden">Light</span>
+                </label>
+
+                <label class="theme-control theme-pick" data-theme-pick="system">
+                    <input name="theme-preference" type="radio" value="system" checked>
+                    <span aria-hidden="true">&#9881;&#65039;</span>
+                    <span class="visually-hidden">System default</span>
+                </label>
+
+                <label class="theme-control theme-pick" data-theme-pick="dark">
+                    <input name="theme-preference" type="radio" value="dark">
+                    <span aria-hidden="true">&#127766;</span>
+                    <span class="visually-hidden">Dark</span>
+                </label>
+            </div>
+        </details>
+    </nav>
+
+    <header class="board-header">
+        <h1>Sticky Module Demo</h1>
+        <p>
+            This page demonstrates a sticky table of contents that stays visible
+            while the article content scrolls.
+        </p>
+    </header>
+
+    <main class="sticky-layout">
+
+        <aside class="sticky-sidebar">
+            <div class="toc">
+                <h2>On This Page</h2>
+
+                <a href="#intro">Introduction</a>
+                <a href="#layout">Layout Behavior</a>
+                <a href="#bug">Overflow Bug</a>
+                <a href="#fix">Sticky Fix</a>
+            </div>
+        </aside>
+
+        <article class="sticky-article">
+
+            <section id="intro">
+                <h2>Introduction</h2>
+                <p>
+                    Sticky positioning is useful when an element should behave normally
+                    until it reaches a specific offset. After that point, it stays fixed
+                    relative to the scroll container.
+                </p>
+                <p>
+                    This page is intentionally long so the table of contents has enough
+                    room to demonstrate sticky behavior while the reader scrolls.
+                </p>
+            </section>
+
+            <section id="layout">
+                <h2>Layout Behavior</h2>
+                <p>
+                    The sidebar and article are arranged in a two-column grid on larger
+                    screens. The sidebar contains a sticky module that remains visible
+                    as the article continues scrolling.
+                </p>
+                <p>
+                    On smaller screens, the layout stacks into one column so the content
+                    remains readable without forcing a narrow sidebar.
+                </p>
+            </section>
+
+            <section id="bug">
+                <h2>Overflow Bug</h2>
+                <p>
+                    Sticky positioning can stop working when an ancestor creates a new
+                    scrolling context with overflow hidden, overflow auto, or overflow scroll.
+                    That makes the sticky element stick relative to the wrong container or
+                    fail to stick at all.
+                </p>
+                <p>
+                    The fix is to avoid placing overflow on the ancestor that sits between
+                    the sticky element and the page scroll container.
+                </p>
+            </section>
+
+            <section id="fix">
+                <h2>Sticky Fix</h2>
+                <p>
+                    In this demo, the decorative clipping effect is moved to a pseudo-element
+                    instead of applying overflow hidden to the layout wrapper. That keeps the
+                    visual polish without breaking the sticky positioning.
+                </p>
+                <p>
+                    This approach keeps the sticky module connected to the page scroll while
+                    still allowing the layout to have a designed container shape.
+                </p>
+            </section>
+
+        </article>
+
+    </main>
+
+    <footer class="board-footer">
+        <p>&copy; 2026 Sticky Module Demo</p>
+    </footer>
+
+</body>
+
+</html>

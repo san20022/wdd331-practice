@@ -34,12 +34,20 @@
         repeat(auto-fit,
             minmax(min(240px, 100%), 1fr));
 
+    grid-template-rows:
+        auto 1fr auto;
+
     gap: 1.5rem;
+
+    align-items: stretch;
 }
 
 .card-grid .card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+
+    grid-row: span 3;
+
+    grid-template-rows: subgrid;
 
     overflow: hidden;
 
@@ -53,7 +61,7 @@
 }
 
 .card-grid .card>div:first-child {
-    height: 160px;
+    min-height: 160px;
 
     background:
         linear-gradient(135deg,
@@ -62,10 +70,11 @@
 }
 
 .card-grid .card>div:last-child {
-    display: flex;
-    flex-direction: column;
+    display: grid;
 
-    flex-grow: 1;
+    grid-template-rows: subgrid;
+
+    grid-row: span 2;
 
     padding: 1.5rem;
 }
@@ -81,9 +90,26 @@
 }
 
 .card-grid .card a {
-    margin-top: auto;
+    align-self: end;
 
     font-weight: 700;
+}
+
+@supports not (grid-template-rows: subgrid) {
+    .card-grid .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-grid .card>div:last-child {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .card-grid .card a {
+        margin-top: auto;
+    }
 }
 
 @media (max-width: 768px) {

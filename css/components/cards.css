@@ -7,7 +7,10 @@
     align-items: center;
     gap: var(--spacing-sm);
 
-    font-size: 1.5rem;
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-lg);
+    line-height: var(--line-height-heading);
+
     font-weight: 600;
 
     margin-bottom: var(--spacing-md);
@@ -54,7 +57,9 @@
 }
 
 .card-tag {
-    font-size: 0.7rem;
+    font-size: var(--font-size-caption);
+    line-height: 1;
+
     font-weight: 600;
 
     padding: 0.3rem 0.6rem;
@@ -82,14 +87,18 @@
 }
 
 .card h3 {
-    font-size: 1.15rem;
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-sm);
+    line-height: var(--line-height-heading);
+
     font-weight: 600;
 
     color: var(--color-text);
 }
 
 .card p {
-    font-size: 0.92rem;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
 
     color: var(--color-text-muted);
 
@@ -105,12 +114,12 @@
 }
 
 .card-meta span {
-    font-size: 0.8rem;
+    font-size: var(--font-size-caption);
 
     color: var(--color-text-muted);
 }
 
 .card-meta a {
-    font-size: 0.85rem;
+    font-size: var(--font-size-caption);
     font-weight: 600;
 }

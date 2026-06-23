@@ -1,7 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
-
-@layer tokens, base, layout, components, utilities;
-
 @import url("tokens/colors.css") layer(tokens);
 @import url("tokens/variables.css") layer(tokens);
 
@@ -18,3 +14,45 @@
 @import url("components/footer.css") layer(components);
 
 @import url("utilities/utilities.css") layer(utilities);
+
+@layer tokens, base, layout, components, utilities;
+
+@media print {
+    body {
+        background: white;
+        color: black;
+        font-family: Georgia, serif;
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+
+    nav,
+    .site-nav,
+    .theme-menu,
+    button,
+    .board-footer {
+        display: none !important;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+    }
+
+    section,
+    article,
+    .experience-item {
+        break-inside: avoid;
+    }
+
+    p,
+    li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    .resume-header {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}

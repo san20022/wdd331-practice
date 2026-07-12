@@ -1,0 +1,119 @@
+.icon {
+    display: inline-block;
+
+    width: 1rem;
+    height: 1rem;
+
+    flex-shrink: 0;
+
+    vertical-align: middle;
+}
+
+.icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.resume-nav-links,
+.resume-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(var(--icon-size-md) + var(--spacing-md));
+    height: calc(var(--icon-size-md) + var(--spacing-md));
+
+    padding: 0;
+
+    color: var(--color-text-muted);
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-base),
+        background-color var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+    color: var(--color-link-hover);
+
+    background-color: var(--color-bg);
+
+    border-color: var(--color-link-hover);
+}
+
+.resume-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 1.5rem;
+
+    margin-top: var(--spacing-md);
+}
+
+.resume-contact-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.45rem;
+
+    color: var(--color-text);
+
+    text-decoration: none;
+
+    font-size: var(--font-size-body);
+
+    transition:
+        color var(--transition-base);
+}
+
+.resume-contact-item:hover {
+    color: var(--color-link-hover);
+}
+
+.resume-contact-item .icon {
+    width: 1.15rem;
+    height: 1.15rem;
+
+    color: var(--color-link);
+
+    flex-shrink: 0;
+}
+
+.resume-contact a,
+.resume-contact span {
+    display: inline-flex;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+
+    .site-nav,
+    .resume-nav-links,
+    .resume-nav-actions {
+        flex-wrap: wrap;
+    }
+
+    .resume-contact {
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0.8rem;
+    }
+}

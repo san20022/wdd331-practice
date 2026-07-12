@@ -11,6 +11,7 @@
 @import url("components/cards.css") layer(components);
 @import url("components/theme-toggle.css") layer(components);
 @import url("components/effects.css") layer(components);
+@import url("components/icons.css") layer(components);
 @import url("components/footer.css") layer(components);
 
 @import url("utilities/utilities.css") layer(utilities);
@@ -21,6 +22,7 @@
     body {
         background: white;
         color: black;
+
         font-family: Georgia, serif;
         font-size: 11pt;
         line-height: 1.4;

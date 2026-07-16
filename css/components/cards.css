@@ -30,18 +30,18 @@
 }
 
 .card {
-    background: var(--color-surface);
-
-    padding: var(--spacing-md);
-
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-border);
-
-    box-shadow: var(--shadow-sm);
-
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+
+    padding: var(--spacing-md);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
 
     transition:
         transform var(--transition-base),
@@ -50,28 +50,30 @@
         border-color var(--transition-base);
 }
 
-.card:hover {
+.card:hover,
+.card:focus-within {
     transform: translateY(-6px);
+
+    border-color: var(--color-accent);
 
     box-shadow: var(--shadow-md);
 }
 
 .card-tag {
-    font-size: var(--font-size-caption);
-    line-height: 1;
-
-    font-weight: 600;
+    align-self: flex-start;
 
     padding: 0.3rem 0.6rem;
 
-    border-radius: var(--radius-sm);
+    font-size: var(--font-size-caption);
+    line-height: 1;
+    font-weight: 600;
 
     color: white;
 
     text-transform: uppercase;
     letter-spacing: 0.05em;
 
-    align-self: flex-start;
+    border-radius: var(--radius-sm);
 }
 
 .card:nth-child(3n+1) .card-tag {
@@ -90,25 +92,25 @@
     font-family: var(--font-family-heading);
     font-size: var(--font-size-heading-sm);
     line-height: var(--line-height-heading);
-
     font-weight: 600;
 
     color: var(--color-text);
 }
 
 .card p {
+    flex-grow: 1;
+
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
 
     color: var(--color-text-muted);
-
-    flex-grow: 1;
 }
 
 .card-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--spacing-sm);
 
     margin-top: var(--spacing-sm);
 }
@@ -122,4 +124,177 @@
 .card-meta a {
     font-size: var(--font-size-caption);
     font-weight: 600;
+}
+
+/* Portfolio homepage cards */
+
+.portfolio-card {
+    position: relative;
+    min-height: 100%;
+
+    padding: clamp(1.25rem, 3vw, 2rem);
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+}
+
+.portfolio-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0 auto auto 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(90deg,
+            var(--color-primary),
+            var(--color-accent));
+}
+
+.portfolio-card--featured {
+    min-height: 320px;
+
+    background:
+        linear-gradient(145deg,
+            color-mix(in oklch, var(--color-primary) 10%, var(--color-surface)),
+            color-mix(in oklch, var(--color-accent) 7%, var(--color-surface)));
+}
+
+.portfolio-card-label {
+    align-self: flex-start;
+
+    padding: 0.35rem 0.7rem;
+
+    font-size: var(--font-size-caption);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--color-primary);
+
+    background-color:
+        color-mix(in oklch, var(--color-primary) 12%, transparent);
+
+    border: 1px solid color-mix(in oklch, var(--color-primary) 30%, transparent);
+
+    border-radius: 999px;
+}
+
+.portfolio-card h3 {
+    margin: 0;
+
+    font-size: var(--font-size-heading-lg);
+}
+
+.portfolio-card p {
+    margin: 0;
+}
+
+.portfolio-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+
+    margin-top: auto;
+    padding-top: var(--spacing-md);
+}
+
+.portfolio-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+
+    font-weight: var(--font-weight-bold);
+}
+
+.portfolio-card-link::after {
+    content: "→";
+
+    transition: transform var(--transition-base);
+}
+
+.portfolio-card-link:hover::after,
+.portfolio-card-link:focus-visible::after {
+    transform: translateX(4px);
+}
+
+.course-card {
+    min-height: 250px;
+}
+
+.course-card ul {
+    display: grid;
+    gap: var(--spacing-sm);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.course-card li {
+    margin: 0;
+}
+
+.course-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+
+    font-weight: 600;
+}
+
+.course-card a::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background-color: var(--color-accent);
+
+    flex-shrink: 0;
+}
+
+.portfolio-card-icon {
+    display: grid;
+    place-items: center;
+
+    width: 52px;
+    height: 52px;
+
+    color: var(--color-primary);
+
+    background-color:
+        color-mix(in oklch, var(--color-primary) 10%, var(--color-surface));
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.portfolio-card-icon .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-card-link::after {
+        transition: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-meta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .portfolio-card-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
